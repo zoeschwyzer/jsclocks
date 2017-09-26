@@ -1,0 +1,162 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@font-face {
+    font-family: 'Karmilla';
+    src: url('fonts/karmilla-bold.woff2') format('woff2'),
+    url('fonts/karmilla-bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+html {
+  font-family: 'Karmilla', Arial, sans-serif;
+  font-weight: bold;
+  color: #000;
+}
+
+body {
+  margin: 0;
+  padding-left: 10em;
+  padding-top: 10vh;
+}
+
+header {
+  font-size: 2.5em;
+  position: fixed;
+  background: #000;
+  color: #fff;
+  /*transform: rotate(-90deg);*/
+  top: 0px;
+  left: 0px;
+  width: auto;
+  height: 100%;
+  padding: 10vh 0em 1em 0em;
+  margin: 0   ;
+  writing-mode: vertical-rl;
+  display: flex;
+}
+
+.spinner,
+header h1 {
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  padding: 1em;
+}
+
+.spinner {
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.7em;
+  border: 0px solid white;
+  padding: 0.7em;
+  background-color: #fff;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #aaa, #fff 50%, #333 50%, #555);
+  animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+    /*background: linear-gradient(0deg, #fff, #fff 50%, #000 50%);*/
+    transform: rotate(0deg);
+    }
+    100% {
+    /*background: linear-gradient(180deg, #fff, #fff 50%, #000 50%);*/
+    transform: rotate(360deg);
+   }
+}
+
+.spinner:hover {
+  animation-duration: 1s;
+  cursor: none;
+}
+
+.intro {
+  line-height: 1.5;
+  font-weight: bold;
+}
+
+.intro, footer {
+  font-size: 1.2em;
+}
+
+.projets {
+  margin: 2em 0;
+  padding: 0 2em 0 0;
+}
+
+.projets li {
+  list-style: none;
+  margin: 0 0 1em 0;
+  padding: 0;
+}
+
+.projets a {
+  display: block;
+  position: relative;
+  color: #000;
+  text-decoration: none;
+}
+
+.projets a:hover {
+  opacity: 0.8;
+}
+
+@media only screen and (min-width : 620px) {
+  .projets a  {
+    width: 45%;
+    float: left;
+    margin-bottom: 1em;
+  }
+
+  .projets li:nth-child(odd) a {
+    clear: left;
+    margin-right: 1em;
+  }
+}
+
+.projets h2 {
+  position: absolute;
+  top: 30%;
+  text-align: center;
+  left: calc(50% - 0.5em);
+  display: none;
+}
+
+.figure {
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  position: relative;
+  border: 1em solid #444;
+}
+
+.projets img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+
+}
+
+footer {
+  clear: both;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  float: left;
+}
+
+footer a {
+  color: #000;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
